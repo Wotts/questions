@@ -19,6 +19,8 @@ type OpenQuestion = {
 type ScoredQuestion = {
   id: string;
   prompt: string;
+  answer: string;
+  submitted: string;
   correct: boolean;
 }
 

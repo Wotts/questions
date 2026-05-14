@@ -26,11 +26,13 @@
 
   .course,
   .question,
+  .answers,
   .choices {
     display: flex;
     flex-direction: column;
   }
 
+  .answers,
   .course {
     gap: 20px;
   }
@@ -114,9 +116,15 @@
         {#if answers}
           <p>Score:</p>
           <p>{answers.score} / {answers.questions.length}</p>
+          <div class="answers">
           {#each answers.questions as answer}
-            <p class={answer.correct ? 'correct' : 'incorrect'}>{answer.prompt}</p>
+            <div class={`answer ${answer.correct ? 'correct' : 'incorrect'}`}>
+              <p>Vraag: {answer.prompt}</p>
+              <p>Jouw antwoord: {answer.submitted}</p>
+              <p>Correcte antwoord: {answer.answer}</p>
+            </div>
           {/each}
+        </div>
         {/if}
 
       {:catch error}

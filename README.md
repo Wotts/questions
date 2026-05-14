@@ -32,8 +32,5 @@ Bezoek: http://localhost:8000
 - Tof te zien dat Laravel een installatie biedt met de Svelte starterkit, dat werkte prettig!
 - Zorg dat je PHP 8.4 lokaal hebt en niet 8.2, dat scheelt uitzoeken waarom de Laravel installer geen Svelte biedt als starter kit.
 - Uiteraard zouden de REST requests op z'n minst een course- en student-ID moeten bevatten.
-- Een eis is dat de correcte antwoorden niet naar de frontend lekken, maar in de opgave staat:
-"...toont de pagina per opgave **goed/fout + modelantwoord**,"
-Wat wordt hier mee bedoeld?
 - Voorgenomen een mooie commit history op te bouwen, niet gelukt. Volgende keer beter!
 - Weer wat geleerd: array_filter behoudt de array index. array_map was misschien beter geweest.

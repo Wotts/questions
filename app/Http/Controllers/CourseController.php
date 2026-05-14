@@ -54,17 +54,27 @@ class CourseController extends Controller
         ];
 
         foreach ($answers as $questionId => $answer) {
-            $filterResult = array_filter(
+            $courseQuestion = array_find(
                 $courseQuestions,
                 fn($question) => $question['id'] == $questionId
             );
 
-            $courseQuestion = reset($filterResult);
+            // $courseQuestion = reset($filterResult);
 
             if ($courseQuestion['type'] === 'multiple_choice') {
+                $correctAnswer = array_find(
+                    $courseQuestion['options'],
+                    fn($option) => $option['id'] == $courseQuestion['correct_option_id'],
+                );
+                $submittedAnswer = array_find(
+                    $courseQuestion['options'],
+                    fn($option) => $option['id'] == $answer,
+                );
                 $question = [
                     "id" => $courseQuestion['id'],
                     "prompt" => $courseQuestion['prompt'],
+                    "answer" => $correctAnswer['label'],
+                    "submitted" => $submittedAnswer['label'],
                 ];
 
                 if ($answer === $courseQuestion['correct_option_id']) {
@@ -81,6 +91,8 @@ class CourseController extends Controller
                 $question = [
                     "id" => $courseQuestion['id'],
                     "prompt" => $courseQuestion['prompt'],
+                    "answer" => $courseQuestion['model_answer'],
+                    "submitted" => $answer,
                 ];
 
                 $correctAnswers = $courseQuestion['synonyms'];
