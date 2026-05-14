@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple_choice",
+      "prompt": "Wat is de hoofdstad van Australië?",
+      "options": [
+        { "id": "a", "label": "Sydney" },
+        { "id": "b", "label": "Melbourne" },
+        { "id": "c", "label": "Canberra" },
+        { "id": "d", "label": "Perth" }
+      ],
+      "correct_option_id": "c"
+    },
+    {
+      "id": "q2",
+      "type": "multiple_choice",
+      "prompt": "In welk jaar viel de Berlijnse Muur?",
+      "options": [
+        { "id": "a", "label": "1987" },
+        { "id": "b", "label": "1989" },
+        { "id": "c", "label": "1991" },
+        { "id": "d", "label": "1993" }
+      ],
+      "correct_option_id": "b"
+    },
+    {
+      "id": "q3",
+      "type": "multiple_choice",
+      "prompt": "Welk orgaan produceert insuline?",
+      "options": [
+        { "id": "a", "label": "Lever" },
+        { "id": "b", "label": "Nieren" },
+        { "id": "c", "label": "Alvleesklier" },
+        { "id": "d", "label": "Milt" }
+      ],
+      "correct_option_id": "c"
+    },
+    {
+      "id": "q4",
+      "type": "open",
+      "prompt": "Hoe heet het proces waarbij planten met behulp van zonlicht koolstofdioxide en water omzetten in glucose en zuurstof?",
+      "model_answer": "fotosynthese",
+      "synonyms": ["photosynthese"]
+    },
+    {
+      "id": "q5",
+      "type": "open",
+      "prompt": "Wat is de wetenschappelijke (Latijnse) naam voor de mens?",
+      "model_answer": "Homo sapiens",
+      "synonyms": ["homo sapiens sapiens"]
+    },
+    {
+      "id": "q6",
+      "type": "open",
+      "prompt": "Welke Nederlandse schilder maakte 'De Nachtwacht'?",
+      "model_answer": "Rembrandt",
+      "synonyms": [
+        "Rembrandt van Rijn",
+        "Rembrandt Harmenszoon van Rijn"
+      ]
+    }
+  ]
+}
