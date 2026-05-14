@@ -59,8 +59,6 @@ class CourseController extends Controller
                 fn($question) => $question['id'] == $questionId
             );
 
-            // $courseQuestion = reset($filterResult);
-
             if ($courseQuestion['type'] === 'multiple_choice') {
                 $correctAnswer = array_find(
                     $courseQuestion['options'],
@@ -98,8 +96,9 @@ class CourseController extends Controller
                 $correctAnswers = $courseQuestion['synonyms'];
                 array_push($correctAnswers, $courseQuestion['model_answer']);
                 $lcAnswers = array_map('strtolower', $correctAnswers);
+                $lcAnswer = strtolower(trim($answer));
 
-                if (in_array(strtolower($answer), $lcAnswers)) {
+                if (in_array($lcAnswer, $lcAnswers)) {
                     $question['correct'] = TRUE;
                     $scoredQuestions['score']++;
                 } else {{
